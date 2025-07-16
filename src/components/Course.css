@@ -1,0 +1,496 @@
+/* Dashboard.css */
+
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+.dashboard {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+}
+
+.logo {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+.nav {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.nav-item {
+  font-size: 13px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  color: white;
+}
+
+/* Main Content */
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f8fc;
+}
+
+/* Top Bar */
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 24px;}
+
+.tabs {
+  display: flex;
+  gap: 16px;
+  background: white;
+  border-radius: 40px;
+  padding: 7px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.tab {
+  border: none;
+  padding: 8px 20px;
+  border-radius: 40px;
+  background: transparent;
+  font-weight: 500;
+  cursor: pointer;
+  color: black;
+  font-size: 13px;
+}
+
+.tab.active {
+  background-color: black;
+  color: white;
+  outline: none;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  background-color: white;
+  border-radius: 40px;
+  padding: 7px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.profile-info {
+  display: flex;
+  align-items: center;
+  background: white;
+  padding: 4px 12px;
+  border-radius: 40px;
+}
+
+.language-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* background: #f1f3f8; */
+  border-radius: 20px;
+}
+
+.language-icon {
+  font-size: 16px;
+  color: #333;
+}
+
+.language-selector {
+  padding: 4px 12px;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  background-color: white;
+  font-size: 11px;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  color:#1f1f25;
+}
+
+.avatar {
+  width: 25px;
+  height: 25px;
+  background: white;
+  border-radius: 50%;
+  border-color: #A694D9;
+  border: 1px solid gray;
+  margin-right: 8px;
+}
+
+.username {
+  font-weight: 500;
+  color: black;
+  font-size: 13px;
+}
+
+.notification-icon,
+.settings-icon {
+  background: #f1f3f8;
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* Content Area */
+.content-area {
+  flex: 1;
+  padding: 15px 24px 24px 24px;
+}
+
+.content-box {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  border-radius: 16px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* ... previous styles ... */
+
+/* Mobile Sidebar Toggle */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  font-size: 24px;
+  border: none;
+  cursor: pointer;
+  margin-right: 16px;
+}
+
+/* Sidebar transitions */
+.sidebar {
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 10;
+    transform: translateX(-100%);
+    width: 200px;
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .topbar {
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+
+  .tabs {
+    margin-top: 12px;
+    width: 100%;
+    justify-content: space-around;
+    flex-wrap: wrap;
+  }
+
+  .profile-info .username {
+    display: none;
+  }
+
+  .content-area {
+    padding: 16px;
+  }
+}
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ccc;
+  cursor: pointer;
+}
+
+.nav-item.active {
+  color: #b8a8fb;
+  /* font-weight: bold; */
+}
+
+.nav-icon {
+  font-size: 16px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 24px;
+  padding: 24px;
+}
+
+@media (max-width: 1024px) {
+  .content-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 cards per row on tablets */
+  }
+}
+
+@media (max-width: 600px) {
+  .content-grid {
+    grid-template-columns: 1fr; /* 1 card per row on mobile */
+  }
+}
+
+
+.course-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-4px);
+}
+
+.card-thumbnail {
+  background-color: #A694D9;
+  height: 140px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.card-title {
+  padding: 16px;
+  font-weight: 500;
+  font-size: 12px;
+  color: black;
+  text-align: center;
+}
+
+
+/* User Info */
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: auto;
+}
+
+.topbar-icons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+
+/* ====== Layout Wrapper ====== */
+.course-content-layout {
+  display: flex;
+  gap: 24px;
+  padding: 24px;
+  height: calc(100vh - 80px); /* Adjust based on Topbar */
+  background-color: #f6f8fc;
+  box-sizing: border-box;
+}
+
+/* ====== Left: Sidebar ====== */
+.course-sidebar {
+  width: 50%;
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  overflow-y: auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.course-sidebar h2 {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 14px;
+  color: #1a1a1a;
+}
+
+/* ====== Module & Lectures ====== */
+.module-block {
+  margin-bottom: 32px;
+}
+
+.module-block h3 {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: #2e2e2e;
+}
+
+.lecture-card {
+  display: flex;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: background 0.2s ease;
+  background-color: #f9f9f9;
+}
+
+.lecture-card:hover {
+  background-color: #eef3fc;
+}
+
+.lecture-icon {
+  width: 24px;
+  height: 24px;
+  background-image: url('/icons/document.svg'); /* Customize this path */
+  background-size: cover;
+  margin-right: 12px;
+}
+
+.lecture-info {
+  flex-grow: 1;
+}
+
+.lecture-title {
+  font-weight: 500;
+  font-size: 11px;
+  color: #1a1a1a;
+}
+
+.lecture-subtitle {
+  font-size: 13px;
+  color: #6e6e6e;
+}
+
+.lecture-card input[type="checkbox"] {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid #bbb;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: white;
+}
+
+.lecture-card input[type="checkbox"]:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+}
+
+/* ====== Right: Preview Panel ====== */
+.lecture-preview {
+  flex: 1;
+  background: #f4f6fa;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #444;
+  font-size: 16px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px #e4e8f0;
+}
+
+/* ====== Back Button ====== */
+.back-button {
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 16px;
+  font-size: 13px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 10px;
+  transition: background-color 0.2s ease;
+  /* Align right */
+  display: block;
+  margin-left: auto;  /* This pushes it to the right */
+  margin-right: 0;
+}
+
+.back-button:hover {
+  background-color: #111827;
+}
+
+
+/* Optional: Custom Scrollbar */
+.course-sidebar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.course-sidebar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.course-sidebar::-webkit-scrollbar-thumb {
+  background-color: #cbd5e0;
+  border-radius: 8px;
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 8px 0;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.module-documents {
+  margin-left: 16px;
+  margin-top: 8px;
+}
+
+.lecture-card {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 6px;
+  font-size: 13px;
+}
+
+.lecture-title {
+  flex-grow: 1;
+  color: #2563eb;
+}
+
+.opened-doc {
+  padding: 10px;
+  border: 1px solid #ddd;
+  background: #f9f9f9;
+}
+
+.doc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.close-doc {
+  border: none;
+  background: none;
+  color: red;
+  cursor: pointer;
+}
