@@ -494,3 +494,33 @@ body, html {
   color: red;
   cursor: pointer;
 }
+
+.coming-soon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 60px); /* adjust if there's a topbar */
+  width: 100%;
+}
+
+.coming-soon-card {
+  
+  padding: 40px;
+  max-width: 500px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+
+.coming-soon-card h2 {
+  margin-bottom: 12px;
+}
+
+.coming-soon-card p {
+  font-size: 1rem;
+  color: #555;
+}
+

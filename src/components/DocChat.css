@@ -1,0 +1,251 @@
+
+.chat-window {
+  display: flex;
+  margin: 0px;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  background-color: #fafafa;  
+}
+
+
+.messages {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 10px;
+  padding: 3px;
+  color:#090909
+}
+
+
+.message-container {
+  display: flex;
+  align-items: flex-end;
+  margin-bottom: 8px;
+}
+
+.message-container.bot {
+  flex-direction: row; 
+}
+
+.message-container.user {
+  flex-direction: row-reverse;
+}
+
+.bubble-timestamp {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.message-container.user .bubble-timestamp {
+  align-items: flex-end;
+}
+
+.message {
+  padding: 2px 10px;
+  border-radius: 10px;
+  max-width: 80%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  margin: 0;
+  line-height: 1.0; 
+  font-size: 12px;
+}
+
+.message.user {
+  background-color: #b5a9d8;
+  max-width: 70%;
+  width: fit-content;
+    line-height: 1.2; 
+}
+
+.message.bot {
+  background-color: #ffffff;
+  max-width: 70%;
+  width: fit-content;
+  line-height: 1.2;
+}
+
+.timestamp {
+  font-size: 0.55rem;
+  color: black;
+  margin-top: 4px;
+  user-select: none;
+}
+
+.message-container.bot .timestamp {
+  text-align: left;
+}
+
+.message-container.user .timestamp {
+  text-align: right;
+}
+
+
+.message-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #d0d0d0;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 10px;
+  flex-shrink: 0;
+  color: #fffcfc;
+}
+
+.message-container.user .message-icon {
+  background-color: #b5a9d8;
+
+}
+
+.message-container.bot .message-icon {
+  background-color: #d2d1d1;
+}
+
+.mic-icon {
+  padding: 10px 8px;
+  color: #666;
+  cursor: pointer;
+}
+
+.mic-icon:hover {
+  color: #d32f2f; 
+}
+ .input-area {
+  display: flex;
+  gap: 5px;
+  padding-bottom: 2px;
+  border: none;
+}
+
+input[type='text'] {
+  flex-grow: 1;
+  padding: 2px 7px; 
+  border-radius: 20px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+  background-color: #ffffff; 
+  color: black;
+  margin-left: 10px;
+    height: 26px;       /* Set height directly */
+
+}
+
+.input-icon {
+  width: 36px;
+  height: 36px;
+  background-color: #e8f5e9; 
+  color: #4caf50;
+  border-radius: 50%; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 8px;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); 
+}
+
+.input-area button {
+  width: 35px;             /* Equal width and height for circular shape */
+  height: 35px;
+  padding: 0;              /* Remove extra padding */
+  border: none;
+  background-color: #b5a9d8;
+  color: white;
+  border-radius: 50%;      /* Full circle */
+  margin-right: 5px;
+  cursor: pointer;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.input-area button:hover {
+  background-color: #0056b3;
+}
+
+
+
+.bot-icon {
+  background-color: #ccc;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+
+.app-title {
+  display: flex;
+  align-items: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.typing-dots {
+  display: inline-flex;
+  gap: 2px;
+  align-items: center;
+}
+
+.typing-dot {
+  width: 5px;
+  height: 5px;
+  background-color: #b5a9d8; 
+  border-radius: 50%;
+  animation: typingBlink 1.2s infinite;
+}
+
+.typing-dot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.typing-dot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes typingBlink {
+  0%, 80%, 100% {
+    opacity: 0.2;
+  }
+  40% {
+    opacity: 1;
+  }
+}
+
+.messages::-webkit-scrollbar {
+  width: 8px; 
+}
+
+.messages::-webkit-scrollbar-track {
+  background: transparent; 
+}
+
+.messages::-webkit-scrollbar-thumb {
+  background-color: #b5a9d8;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.messages::-webkit-scrollbar-thumb:hover {
+background-color: #b5a9d8}
+
+.message a {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.message a:hover {
+  color: #0056b3;
+}

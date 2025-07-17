@@ -230,11 +230,12 @@ display: flex;
 }
 
 .note-text-block {
-  background-color: #fafafa;
+  background-color: #ffffff;
   padding: 6px;
   border-radius: 6px;
   margin-bottom: 10px;
   height: 60px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .note-text-title {
@@ -247,11 +248,11 @@ display: flex;
   color: black;
 }
 .notes-scroll-container {
-  max-height: 470px; 
+  max-height: 360px; 
   overflow-y: auto;
   padding-right: 8px; 
   margin-top: 12px;
-  background-color: #ffffff;
+  background-color: #fafafa;
 }
 
 .notes-scroll-container::-webkit-scrollbar {
@@ -469,3 +470,30 @@ color:black;
   font-size: 18px;
   color: #aaa;
 }
+
+.cards-container {
+  display: flex;
+  justify-content: space-between; /* Ensures space between the two cards */
+  gap: 15px; /* Space between the cards */
+  height: 100%; /* Ensures the container takes full height */
+}
+
+.notes-card, .podcast-card {
+  background-color: #fafafa;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 48%;
+  font-size: 12px;
+  margin: 15px 0;
+   min-height: 390px; /* Set a minimum height for both cards */
+     border: none; /* Ensure no border */
+  outline: none; /* Ensure no outline */
+}
+
+.notes-card h3, .podcast-card h3 {
+  font-size: 1.0rem;
+  font-weight: 400;
+  margin: auto;
+}
+

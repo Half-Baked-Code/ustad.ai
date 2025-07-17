@@ -128,6 +128,17 @@ export default function Course() {
       return <StudyMaterial selectedDocs={selectedDocs}/>;
     }
 
+    if (activeTab === 'Conversational') {
+  return (
+    <div className="coming-soon-wrapper">
+      <div className="coming-soon-card">
+        <p>This feature is coming soon. Stay tuned!</p>
+      </div>
+    </div>
+  );
+}
+
+
     if (!selectedCourse) {
       return (
         <div className="content-grid">

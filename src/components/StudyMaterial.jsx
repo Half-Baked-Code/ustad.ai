@@ -45,7 +45,7 @@ import React, { useState, useEffect, useRef } from "react";
 import "./StudyMaterial.css";
 import { FiChevronRight, FiInfo, FiHeadphones } from "react-icons/fi";
 import ReactMarkdown from "react-markdown";
-// import AudioOverview from "./AudioOverview";
+import AudioOverview from "./AudioOverview";
 import axios from "axios";
 import MindmapModal from "./MindmapModal"; // adjust the path if needed
 
@@ -350,7 +350,11 @@ const StudyMaterial = ({ selectedDocs }) => {
             </div>
           )}
           {/* Starting onwards here is the code of when the notes get created whenn you click on the add a note button and the functionality of it being edittable */}
-          <div className="notes-scroll-container">
+          <div className="cards-container">
+            {/* Notes Card */}
+            <div className="notes-card">
+              <h3>Notes</h3>
+              <div className="notes-scroll-container">
             {notes.map((note, index) => (
               <div
                 key={index}
@@ -504,7 +508,19 @@ const StudyMaterial = ({ selectedDocs }) => {
                 </div>
               </div>
             ))}
+           </div>
+
+            </div>
+
+            {/* Podcast Card */}
+            <div className="podcast-card">
+              <h3>Podcast</h3>
+              <div className="podcast-content">
+                <AudioOverview selectedDocs={selectedDocs} />
+              </div>
+            </div>
           </div>
+
         </div>
       </div>
       {isEditModalOpen && (

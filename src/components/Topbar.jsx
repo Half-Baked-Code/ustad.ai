@@ -6,7 +6,7 @@ export default function Topbar({ activeTab, setActiveTab, language, setLanguage 
   return (
     <div className="topbar">
       <div className="tabs">
-        {['Courses', 'Syllabus', 'Chat', 'Study Material', 'Podcasts'].map((tab) => (
+        {['Courses', 'Syllabus', 'Chat', 'Study Material', 'Conversational'].map((tab) => (
           <button
             key={tab}
             className={`tab ${activeTab === tab ? 'active' : ''}`}
